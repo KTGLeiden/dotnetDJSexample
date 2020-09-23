@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AutoMapper;
+using DjsAutomapperExample.Mappers;
 
 namespace DjsAutomapperExample
 {
@@ -20,6 +22,9 @@ namespace DjsAutomapperExample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add automapper as a service with our mappingProfile
+            services.AddAutoMapper(typeof(MappingProfile));
+
             // add database context
             var connection = Configuration.GetConnectionString("MovieDatabase");
             services.AddDbContext<MovieContext>(options => options.UseSqlServer(connection));
