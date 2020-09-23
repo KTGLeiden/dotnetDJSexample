@@ -1,0 +1,11 @@
+﻿@model AddActorDTO
+
+<form asp-action="AddMovie" method="post">
+    <h3>Add movie</h3>
+    <input type="hidden" asp-for="actorId" value="@Model.actorId" />
+    <div class="form-group">
+        <label asp-for="movieId" class="control-label">Movie</label>
+        <select asp-for="movieId" class="form-control" asp-items="ViewBag.Movies"></select>
+    </div>
+    <button type="submit">Add</button>
+</form>

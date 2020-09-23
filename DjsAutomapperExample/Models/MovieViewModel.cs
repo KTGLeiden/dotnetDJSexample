@@ -1,4 +1,6 @@
-﻿namespace DjsAutomapperExample.Models
+﻿using System.Collections.Generic;
+
+namespace DjsAutomapperExample.Models
 {
     public class MovieViewModel
     {
